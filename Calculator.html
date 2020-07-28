@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="_css/bootstrap.css">
+    <link rel="stylesheet" href="Calculator.css">
+    <script src="_js/jquery.min.js"></script>
+    <script src="_js/popper.min.js"></script>
+    <script src="_js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <!-- 顯示螢幕 -->
+        <div id="d1">
+            <div id="d2">
+                <div id="d3">
+                    <h1 id="result" style="text-align:right;"></h1>
+                </div>
+            </div>
+        </div>
+        <!--計算機按鍵-->
+        <div id="bgimg">
+            <table>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('img11')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">←</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('img1')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">√</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('img2')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">+/-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="graybtn" onclick="offClick()">OFF</button>
+                    </td>
+                    <td>
+                        <button class="bluebtn" onclick="btnClick('img3')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">MC</button>
+                    </td>
+                    <td>
+                        <button class="bluebtn" onclick="btnClick('img4')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">MR</button>
+                    </td>
+                    <td>
+                        <button class="bluebtn" onclick="btnClick('img5')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">M-</button>
+                    </td>
+                    <td>
+                        <button class="bluebtn" onclick="btnClick('img6')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">M+</button>
+                    </td>
+                    <td>
+                        <button class="bluebtn" onclick="btnClick('img7')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">GT</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('c')">AC</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('7')">7</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('8')">8</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('9')">9</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('img8')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">%</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('img9')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">MU</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('c')">C</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('4')">4</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('5')">5</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('6')">6</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('*')">x</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('/')">/</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('c')">CE</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('1')">1</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('2')">2</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('3')">3</button>
+                    </td>
+                    <td rowspan="2">
+                        <button class="graybtn" id="add" onclick="btnClick('+')">+</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('-')">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="redbtn" class="redbtn" onclick="onClick()">ON</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('0')">0</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('00')">00</button>
+                    </td>
+                    <td>
+                        <button class="blackbtn" onclick="btnClick('img10')" type="button" data-toggle="modal"
+                            data-target="#exampleModal">.</button>
+                    </td>
+                    <td>
+                        <button class="graybtn" onclick="btnClick('=')">=</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--照片提示框-->
+    <div>
+        <div class="modal fade" id="1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nooooooooooooo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="myimg" src="image/1.png" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let all = '';
+        let sum = 0;
+        let open = false;
+        let patt = /^[i]{1}[m]{1}[g]{1}/;
+
+        // open
+        function onClick() {
+            result.innerText = '0';
+            open = true;
+        }
+        // close
+        function offClick() {
+            result.innerText = '';
+            $('.modal').attr('id', '');
+            open = false;
+        }
+
+        // 判斷
+        function btnClick(num) {
+            if (open == true) { //有無開機
+                result.innerText = (result.innerText == '0') ? '' : result.innerText; //清除C後的0
+                if (!patt.test(num)) {  //是否為有效button
+                    console.log(result.innerText);
+                    if (num == '=') {
+                        result.innerText = eval(all);
+                        console.log(eval(all));
+
+                    } else if (num == 'c') { //判斷是否為清除
+                        result.innerText = '0';
+                        all = '';
+
+                    } else if (num == '+' || num == '-' || num == '*' || num == '/') {
+                        all = eval(all);
+                        all += num;
+                        result.innerText = '';
+                        console.log(all);
+
+                    } else {   // 數字按鈕
+                        all += num;
+                        result.innerText += num;
+                        console.log(all);
+                    }
+                } else {
+                    // 隨機出現圖片
+                    $('.modal').attr('id', 'exampleModal');
+                    let temp = Math.floor(Math.random() * 8) + 1;
+                    $('#myimg').attr('src', `image/${temp}.png`);
+                    console.log(temp);
+                }
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
