@@ -10,7 +10,7 @@ body>div:first-child {
   margin: -225px 0 0 -165px;
 }
 #d1 {
-    background-image: url('/image/top.svg');
+    background-image: url('../image/top.svg');
     height: 150px;
     width: 330px;
     background-color: black;
@@ -40,24 +40,24 @@ body>div:first-child {
     border-radius:5px 5px 5px 5px;
 }
 #bgimg {
+  display: flex;
+  align-items: center;
     height: 280px;
     width: 330px;
     /* background-color: silver; */
     border-radius:0px 0px 10px 10px;
-    background-image: url('/image/body.jpg');
+    background-image: url('../image/body.png');
 
 }
 table {
-    border-collapse: collapse;
-    border: 2.5vh solid rgba(255, 255, 255,0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
     color: black;
 }
 td{
     border: 1vh solid rgba(255, 255, 255,0);
     color: black;
-}
-tr {
-  width: 100%;
 }
 td>button {
     width: 100%;
